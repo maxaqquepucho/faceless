@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.faceless/
+*.log
+.DS_Store

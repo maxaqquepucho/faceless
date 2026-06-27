@@ -1,0 +1,69 @@
+{
+  "name": "faceless",
+  "version": "0.1.0",
+  "description": "A read-only, reusable code-comprehension agent library built on the Claude Agent SDK.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:live": "FACELESS_LIVE=1 vitest run test/smoke.live.test.ts",
+    "example": "node examples/basic.mjs",
+    "clean": "rm -rf dist",
+    "prepack": "pnpm build"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "keywords": [
+    "claude",
+    "agent",
+    "code-analysis",
+    "codebase",
+    "anthropic",
+    "read-only"
+  ],
+  "license": "MIT",
+  "author": "maxaqquepucho <maxaqquepucho@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxaqquepucho/faceless.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxaqquepucho/faceless/issues"
+  },
+  "homepage": "https://github.com/maxaqquepucho/faceless#readme",
+  "sideEffects": false,
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.195",
+    "@anthropic-ai/sdk": "^0.106.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^3.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
